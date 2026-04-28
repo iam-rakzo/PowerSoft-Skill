@@ -89,18 +89,15 @@ git branch --show-current
 
 # Commits nuevos
 git log develop..HEAD --oneline
-
-# Fecha en nombre de rama (para inferir plan)
-git branch --show-current | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}'
 ```
 
-Buscar plan vinculado en `docs/superpowers/plans/` usando la fecha extraída del nombre de la rama:
+Buscar plan vinculado en `docs/superpowers/plans/` mostrando los más recientes primero:
 
 ```bash
-ls docs/superpowers/plans/*<fecha>*.md 2>/dev/null
+ls -lt docs/superpowers/plans/*.md 2>/dev/null | head -5
 ```
 
-Si hay múltiples archivos con esa fecha → preguntar al usuario cuál es el plan vinculado.
+Mostrar la lista al usuario y preguntar cuál corresponde a este trabajo.
 Si no hay ninguno → dejar el campo vacío y notificar al usuario.
 
 Construir borrador con esta estructura exacta:
