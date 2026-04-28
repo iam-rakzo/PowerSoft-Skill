@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "powersoft",
+  "description": "Development workflow skills for Claude Code — branch setup, validation, and PR creation.",
+  "owner": {
+    "name": "Oscar Rodriguez",
+    "url": "https://github.com/oscrodriguez"
+  },
+  "plugins": [
+    {
+      "name": "powersoft",
+      "description": "Git-aware development cycle skills: branch setup with plan verification and PR creation with mandatory validations.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
