@@ -1,0 +1,27 @@
+skills/finish-work/SKILL.md
+  e080d3b11584bdf9 94,97,100
+skills/start-work/SKILL.md
+  e080d3b11584bdf9 3,8,10,12,14,30,38-63,67-68,71,80,82-83,91,93-95,103-122,124-126,130-131,133-134
+CLAUDE.md
+  e080d3b11584bdf9 1-69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "6929c177cf4bbb3dd3474ec8eb64fcd56dc888e0",
+  "prompts": {
+    "e080d3b11584bdf9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3ae7ad0e-4072-4169-8b94-f5e4d22158bc",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Oscar Rodriguez",
+      "messages": [],
+      "total_additions": 141,
+      "total_deletions": 51,
+      "accepted_lines": 139,
+      "overriden_lines": 0
+    }
+  }
+}
