@@ -1,7 +1,7 @@
 {
   "name": "powersoft",
   "description": "Git-aware development cycle skills: branch setup with plan verification and PR creation with mandatory validations.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Oscar Rodriguez",
     "url": "https://github.com/oscrodriguez"
