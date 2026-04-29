@@ -134,4 +134,40 @@ gh pr create \
   --body "<body-final>"
 ```
 
-Mostrar URL del PR creado.
+Guardar URL del PR creado como `<pr-url>`. Mostrar al usuario.
+
+## FASE 5 — Code Review + Security Review
+
+Informar al usuario:
+
+> Iniciando análisis de código y seguridad sobre la PR recién creada. Ejecutando en paralelo…
+
+Invocar ambos en paralelo usando `superpowers:dispatching-parallel-agents`:
+
+- **Agente 1:** `code-review:code-review` — pasando `<pr-url>` como input
+- **Agente 2:** `security-review` — ejecutado sobre el branch actual
+
+Esperar resultados de ambos antes de continuar.
+
+### Evaluación de findings
+
+**Security review:**
+- Hallazgo crítico (vulnerabilidad, exposición de datos, inyección) → **BLOQUEADO.** Mostrar hallazgos completos. No continuar hasta que el usuario corrija y vuelva a ejecutar `finish-work`.
+- Hallazgo menor → mostrar como advertencia, continuar.
+
+**Code review:**
+- Hallazgos presentes → mostrar lista completa, luego preguntar:
+  > **Code review encontró findings. ¿Confirmás que procedés con estos pendientes para resolver en PR de seguimiento? (s/n)**
+  - `n` → **PAUSADO.** El usuario debe resolver antes de continuar.
+  - `s` → continuar.
+- Sin hallazgos → continuar.
+
+### Resumen final
+
+Mostrar estado consolidado:
+
+```
+✅ PR creado:        <pr-url>
+✅ Security review:  OK  (o lista de advertencias menores)
+✅ Code review:      OK  (o "X findings — aceptados por usuario")
+```
