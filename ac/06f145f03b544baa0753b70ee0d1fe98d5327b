@@ -1,0 +1,25 @@
+.claude-plugin/plugin.json
+  dce3d4f58c82db54 4
+skills/start-work/SKILL.md
+  dce3d4f58c82db54 103-136
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "ac06f145f03b544baa0753b70ee0d1fe98d5327b",
+  "prompts": {
+    "dce3d4f58c82db54": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2cd1fdea-beed-44bb-9315-0e6b30b785b3",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Oscar Rodriguez",
+      "messages": [],
+      "total_additions": 35,
+      "total_deletions": 2,
+      "accepted_lines": 35,
+      "overriden_lines": 0
+    }
+  }
+}
