@@ -100,7 +100,40 @@ Mostrar preview y pedir confirmación antes de crear:
 git checkout -b <nombre-rama>
 ```
 
-## FASE 6 — Brainstorming, spec y plan
+## FASE 6 — Release version
+
+Usando `<tipo>` capturado en Fase 3, determinar el release type:
+
+| Branch type | Release flag |
+|-------------|-------------|
+| `feat` | `--minor` |
+| `perf` | `--minor` |
+| `fix`, `refactor`, `docs`, `style`, `test`, `chore`, `build`, `ci`, `revert` | `--patch` |
+
+**Major override:** si `<prompt-trabajo>` contiene palabras como `"breaking change"`, `"versión mayor"`, `"major release"`, `"incompatible"` → proponer `--major` con advertencia explícita al usuario.
+
+Mostrar propuesta y pedir confirmación:
+
+> **Release propuesta:** `php bin/console app:release --<type>` — ¿Confirmás? (s/n o escribí `major`/`minor`/`patch` para override)
+
+No continuar hasta confirmar.
+
+Ejecutar:
+
+```bash
+php bin/console app:release --<type>
+```
+
+Si falla → mostrar error completo. **BLOQUEADO** hasta resolver.
+
+Commitear el archivo de versión generado:
+
+```bash
+git add -A
+git commit -m "chore: release version"
+```
+
+## FASE 7 — Brainstorming, spec y plan
 
 Informar al usuario:
 
